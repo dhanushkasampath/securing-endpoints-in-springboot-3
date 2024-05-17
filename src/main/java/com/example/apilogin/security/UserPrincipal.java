@@ -6,10 +6,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-import java.util.List;
 
 //just after implementing UserDetails we need to make sure to 'true' the boolean values
-//otherwise stack over flow errors may occur
+//otherwise stack overflow errors may occur
 @Getter
 @Builder
 public class UserPrincipal implements UserDetails {

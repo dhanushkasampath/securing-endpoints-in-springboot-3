@@ -5,6 +5,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+/**
+ * This service class depict the database calling part to fetch the corresponding user by email.
+ */
 @Service
 public class UserService {
 
@@ -30,7 +33,6 @@ public class UserService {
             user.setRole("ROLE_USER");
             user.setExtraInfo("My nice user");
             return Optional.of(user);
-
         }
 
         return Optional.empty();

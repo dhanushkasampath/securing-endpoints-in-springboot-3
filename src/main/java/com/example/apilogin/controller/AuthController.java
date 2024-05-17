@@ -10,13 +10,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequiredArgsConstructor
+@RequiredArgsConstructor//this is related to constructor injection. fields defined as final will be used for this
 public class AuthController {
 
 
     private final AuthService authService;
 
-    //when user successfully logged in he should get a jwt token
+    /**
+     * This endpoint is to get jwt token by entering username and password
+     */
     @PostMapping("/auth/login")//we need to give access to this endpoint by security config file
     public LoginResponse login(@RequestBody @Validated LoginRequest request){
         return authService.attemptLogin(request.getEmail(), request.getPassword());

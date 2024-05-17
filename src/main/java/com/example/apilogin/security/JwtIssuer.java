@@ -16,6 +16,13 @@ public class JwtIssuer {
 
     private final JwtProperties jwtProperties;
 
+    /**
+     * This method is used to generate a JWT token
+     * @param userId
+     * @param email
+     * @param roles
+     * @return
+     */
     public String issue(long userId, String email, List<String> roles){
         return JWT.create()
                 .withSubject(String.valueOf(userId))

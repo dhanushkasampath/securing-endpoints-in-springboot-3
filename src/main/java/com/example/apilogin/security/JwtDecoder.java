@@ -12,7 +12,7 @@ public class JwtDecoder {
 
     private final JwtProperties properties;
     /**
-     * Algorithm.HMAC256() is the algorithm we used to encode
+     * Algorithm.HMAC256() is the algorithm we used to encode. So we have to use the same algorithm to decode
      * @param token
      * @return
      */

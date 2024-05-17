@@ -34,6 +34,7 @@ public class WebSecurityConfig {
             .securityMatcher("/**")
             .authorizeHttpRequests(registry->registry
                 .requestMatchers("/").permitAll()
+                .requestMatchers("/actuator/**").permitAll()
                 .requestMatchers("/auth/login").permitAll()//allowing access to this endpoint
                 .requestMatchers("/admin/**").hasRole("ADMIN")// why it does not work when I change this value to ABC and set role as ABC in UserService
                 .anyRequest().authenticated())

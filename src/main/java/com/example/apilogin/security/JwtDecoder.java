@@ -17,7 +17,7 @@ public class JwtDecoder {
      * @return
      */
     public DecodedJWT decode(String token){
-        return JWT.require(Algorithm.HMAC256(properties.getSecretKey()))
+        return JWT.require(Algorithm.HMAC256(properties.getSecretKey()))// when decoding the secret-key of the application is used. that also used to generate the token. this is to verify the token is issued by this spring boot application
                 .build()
                 .verify(token);
     }

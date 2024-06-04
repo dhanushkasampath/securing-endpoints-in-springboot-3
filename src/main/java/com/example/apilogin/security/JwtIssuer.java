@@ -18,6 +18,10 @@ public class JwtIssuer {
 
     /**
      * This method is used to generate a JWT token
+     * the signature part of the jwt token is created by Base64UrlEncoding of header and payload and a
+     * secretkey stored in the application.
+     * When the client calls comes in the next time with jwt token, spring boot application verify that signature.
+     * if that is incorrect authentication failure is sent without allowing to log in
      * @param userId
      * @param email
      * @param roles

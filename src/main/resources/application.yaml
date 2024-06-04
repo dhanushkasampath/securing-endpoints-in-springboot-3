@@ -8,5 +8,8 @@ management:
       exposure:
         include: "*"
 
+  server:
+    port: 8090
+
 #  http://localhost:8080/actuator/beans
 #  http://localhost:8080/actuator/health

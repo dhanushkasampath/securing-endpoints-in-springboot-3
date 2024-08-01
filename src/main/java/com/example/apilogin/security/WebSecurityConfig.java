@@ -33,7 +33,7 @@ public class WebSecurityConfig {
         http
             .securityMatcher("/**")
             .authorizeHttpRequests(registry->registry
-                .requestMatchers("/").permitAll()
+                .requestMatchers("/").permitAll()// Highest restrictive should be first, Least restrictive should be least
                 .requestMatchers("/actuator/**").permitAll()
                 .requestMatchers("/auth/login").permitAll()//allowing access to this endpoint
                 .requestMatchers("/admin/**").hasRole("ADMIN")// why it does not work when I change this value to ABC and set role as ABC in UserService
